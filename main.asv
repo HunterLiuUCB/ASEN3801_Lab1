@@ -55,7 +55,7 @@ tol = [1e-2 1e-4 1e-6 1e-8 1e-10]; %Array of tolerances to test
 tol_table = zeros(width(s),length(tol));
 %Nested for loop that calculates solutions for each tolerance, finds the
 %absolute difference of the solutions and the defined relative tolerance
-%and then inputs them into a table accordingly
+%and then inputs them into a table 
 for i = 1:length(tol)
     opt = odeset('RelTol',tol(i),'AbsTol',tol(i));
     [t,s_b] = ode45(@(t,s) diff_funcs(t,s), time_span, initial_conds,opt);
