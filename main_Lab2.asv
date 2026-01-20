@@ -1,0 +1,26 @@
+%Contributors: Hunter Liu, Parker Himes, Jessa Wanninger, Andrew Yates
+%Course number: ASEN 3801
+%File name: main_Lab2.m
+%Created: 1/20/26
+
+clear
+clc
+close all
+
+%% Problem 1
+filename = '3801_Sec001_Test1.csv';
+filename = DataConditioning(CSV_File);
+
+function [t_vec, av_pos_inert, av_att, tar_pos_inert, tar_att] = LoadASPENData(filename)
+% Inputs: 
+%
+% Outputs: 
+%
+% Methodology: 
+t_vec = (1:length(filename));
+pos_av_aspen = 
+att_av_aspen = 
+pos_tar_aspen =
+att_tar_aspen = 
+[pos_av_class, att_av_class, pos_tar_class, att_tar_class] = ConvertASPENData(pos_av_aspen, att_av_aspen,  pos_tar_aspen, att_tar_aspen);
+end
