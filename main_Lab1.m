@@ -1,6 +1,6 @@
-%Contributors:
+%Contributors: Hunter Liu, Parker Himes, Jessa Wanninger, Andrew Yates
 %Course number: ASEN 3801
-%File name: main.m
+%File name: main_Lab1.m
 %Created: 1/13/26
 clear
 clc
@@ -13,6 +13,12 @@ function diff_eqs = diff_funcs(t,s)
  % Differential equations defined as array of variable s
  diff_eqs = [-9*s(1) + s(3); 4*s(1)*s(2)*s(3) - s(2)^2; 2*s(1)-s(2)-2*s(4);s(2)*s(3)-s(3)^2-3*s(4)^3];
 end
+
+% Inputs: 
+%
+% Outputs: 
+%
+% Methodology: 
 
 %%Problem 1A
 tol = 1e-8; %Tolerance for Problem 1A
