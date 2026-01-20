@@ -46,6 +46,8 @@ xlabel('Time (n.d.)');
 ylabel('z (n.d.)');
 title('z vs Time');
 
+fig=gcf;
+exportgraphics(fig, 'Problem1A_ODESol.png');
 %% Problem 1b
 rel_tol = 1e-12; %Relative tolerance for difference calculations
 opt = odeset('RelTol',rel_tol,'AbsTol',rel_tol); 
@@ -91,6 +93,7 @@ state.c.v_d = x(:,6);
 state.c.alt = -state.c.p_d; % flipping down direction to be negative i.e. altitude
 
 %% Plots
+figure();
 plot3(state.c.p_e,state.c.p_n,state.c.alt);
 
 
