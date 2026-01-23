@@ -269,7 +269,7 @@ figure;
 plot(alts,min_distance_e,'LineWidth',2);
 xlabel('Altitude (m)');
 ylabel('Minimum Distance (m)');
-title('Minimum Landiing Distance vs Altitude');
+title('Minimum Landing Distance vs Altitude');
 grid on;
 
 %% Part f
@@ -377,7 +377,9 @@ function xdot = objectEOM(t,x,win_vel,const)
 %         drag, mass, and acceleration due to gravity
 % Outputs: xdot = time derivative of state vector x
 %
-% Methodology: 
+% Methodology: Uses Newton's second law F=ma to calculate the derivative of
+% the state vector. Taking into account the wind veolcity vector, the drag
+% force, and vector directions.
 
 % Declaring variables from the statevector x
 p_n = x(1); % Position of the sphere in the north direction
