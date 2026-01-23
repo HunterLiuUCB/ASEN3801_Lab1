@@ -372,10 +372,8 @@ function xdot = objectEOM(t,x,win_vel,const)
 %         x = 6x1 vector give position and velocity values in NED frame
 %           = [p_n p_e p_d v_n v_e v_d]
 %         win_vel = 3x1 wind velocity vector in NED frame
-%                 = [v_n;v_e;v_d]
-%         const = structure containing air density, area, coefficient of
-%         drag, mass, and acceleration due to gravity
-% Outputs: xdot = time derivative of state vector x
+%                 = [v_nv_e;v_d]
+% Outputs: 
 %
 % Methodology: 
 
