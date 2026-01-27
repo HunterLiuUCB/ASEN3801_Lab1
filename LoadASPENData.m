@@ -9,11 +9,11 @@ function [t_vec, av_pos_inert, av_att, tar_pos_inert, tar_att] = LoadASPENData(f
 %
 % Methodology: 
 data = DataConditioning(filename);
-t_vec = (1:length(data));
+t_vec = (1:length(data)) / 100;
 pos_av_aspen = data(:, 11:13)';
 att_av_aspen = data(:,8:10)';
-pos_tar_aspen = data(:,2:4)';
-att_tar_aspen = data(:,5:7)';
+pos_tar_aspen = data(:,5:7)';
+att_tar_aspen = data(:,2:4)';
 [pos_av_class, att_av_class, pos_tar_class, att_tar_class] = ConvertASPENData(pos_av_aspen, att_av_aspen,  pos_tar_aspen, att_tar_aspen);
 av_pos_inert =  pos_av_class / 1000;
 av_att = att_av_class;
