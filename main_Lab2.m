@@ -113,7 +113,8 @@ plot(t_vec, rad2deg(tar_att(3, :)), 'r'); %target gamma
 plot(t_vec, rad2deg(av_att(3, :)), 'b'); % vehicle gamma
 lgd = legend("Target", "Aerospace Vehicle", 'Location','northwest');
 hold off;
-
+% Problem 5
+[tar_attitude_313,av_attitude_313] = problem_5(filename);
 
 % Problem 6 
 %Finds inertial relative position of target by taking difference between
