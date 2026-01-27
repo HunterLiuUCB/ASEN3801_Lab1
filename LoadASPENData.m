@@ -3,7 +3,7 @@
 % File name: LoadASPENData.m
 % Created: 1/20/26
 
-function [t_vec, av_pos_inert, av_att, tar_pos_inert, tar_att] = LoadASPENData(filename)
+function [t_vec, av_pos_inert, av_att, tar_pos_inert, tar_att,pos_av_aspen] = LoadASPENData(filename)
 % Inputs: filename of a .csv file with data from the motion capture system in the ASPEN lab
 %
 % Outputs: t_vec = a 1xn time vector (s), n = total number of frames from the dataset (3)
@@ -23,8 +23,8 @@ data = DataConditioning(filename); % reading in and conditioning data file
 t_vec = (1:length(data))/100; % creating the time vector, adjusting for frame rate
 pos_av_aspen = data(:, 11:13)'; % extracting vehicle position vectors
 att_av_aspen = data(:,8:10)'; % extracting vehicle Euler angles
-pos_tar_aspen = data(:,2:4)'; % extracting target position vectors
-att_tar_aspen = data(:,5:7)'; % extracting target Euler anlges
+pos_tar_aspen = data(:,5:7)'; % extracting target position vectors
+att_tar_aspen = data(:,2:4)'; % extracting target Euler anlges
 
 % converting outputs into appropriate form using the given ConvertASPENData
 % function

@@ -24,7 +24,7 @@ av_attitude_313 = rad2deg(av_attitude_313);
 tar_attitude_313 = rad2deg(tar_attitude_313);
 %Plots
 
-figure();
+figure(6);
 sgtitle('Problem 5: Aerospace Vechicle & Target Attitude vs time ')
 subplot(3, 1, 1);
 hold on
@@ -34,6 +34,7 @@ hold off
 xlabel('Time (s)');
 ylabel('\alpha (deg)');
 title('\alpha vs Time');
+lgd = legend("Aerospace Vehicle", "Target", 'Location','northwest');
 subplot(3, 1, 2);
 hold on
 plot(t_vec, av_attitude_313(2,:),'b');
@@ -42,6 +43,7 @@ hold off
 xlabel('Time (s)');
 ylabel('\beta(deg)');
 title('\beta vs Time');
+lgd = legend("Aerospace Vehicle","Target", 'Location','northwest');
 subplot(3, 1, 3);
 hold on
 plot(t_vec, av_attitude_313(3,:),'b');
@@ -50,8 +52,9 @@ hold off
 xlabel('Time (s)');
 ylabel('\gamma (deg)');
 title('\gamma vs Time');
+lgd = legend("Aerospace Vehicle","Target", 'Location','northwest');
 
-
-
+figure(6);
+saveas(gcf,'Problem5.png')
 
 end
