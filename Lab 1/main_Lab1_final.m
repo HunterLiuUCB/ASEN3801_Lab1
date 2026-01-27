@@ -86,7 +86,7 @@ state.c.alt = -state.c.p_d; % flipping down direction to be negative i.e. altitu
 % Trajectory Plot
 figure;
 plot3(state.c.p_n,state.c.p_e,state.c.alt,'LineWidth',2);
-title('Trajectory');
+title('Problem 2c: Trajectory');
 xlabel('North');
 ylabel('East');
 zlabel('Altitude');
@@ -166,7 +166,7 @@ end
 % Plotting North Deflection
 figure;
 plot(wind_vecs(1,:),final_north_pos_d,'LineWidth',2);
-title('North Wind Deflection');
+title('Problem 2d: North Wind Deflection');
 xlabel('Wind Speed (m/s)');
 ylabel('North Deflection (m)');
 grid on;
@@ -179,7 +179,7 @@ figure;
 plot(wind_vecs(1,:),tot_distance_d,'LineWidth',2);
 xlabel('Wind Speed (m/s)');
 ylabel('Total Distance (m)');
-title('Total Distance vs Wind Speed');
+title('Problem 2d: Total Distance vs Wind Speed');
 grid on;
 
 %% Question 2 Part e
@@ -256,7 +256,7 @@ set(legend,...
     'Position',[0.440961662225135 0.78149484810666 0.152417659425368 0.132558139534884]);
 xlabel('Wind Speeds (m/s)');
 ylabel('Total Distance (m)');
-title('Varying Altitudes: Landing Location vs Wind Speed');
+title('Problem 2e: Varying Altitudes: Landing Location vs Wind Speed');
 
 
 grid on;
@@ -269,7 +269,7 @@ figure;
 plot(alts,min_distance_e,'LineWidth',2);
 xlabel('Altitude (m)');
 ylabel('Minimum Distance (m)');
-title('Minimum Landiing Distance vs Altitude');
+title('Problem 2e: Minimum Landing Distance vs Altitude');
 grid on;
 
 %% Part f
@@ -315,7 +315,7 @@ figure;
 plot(masses_f * 1000,tot_distance_f(:,wind_idx),'LineWidth',2);
 xlabel('Mass (g)');
 ylabel('Distance Traveled (m)');
-title('Distance Traveled vs Mass');
+title('Problem 2f: Distance Traveled vs Mass');
 grid on;
 
 % Second Plot w/ wind
@@ -342,7 +342,7 @@ for r = 1 : length(mass_f_plot_2)
 end
 xlabel('Wind Speed (m/s)');
 ylabel('Total Distance Travelled (m)');
-title('Varying Masses: Total Distance vs Mass')
+title('Problem 2f: Varying Masses: Total Distance vs Mass')
 legend(legend_labels_f);
 set(legend,...
     'Position',[0.440961662225135 0.78149484810666 0.152417659425368 0.132558139534884]);
@@ -372,10 +372,14 @@ function xdot = objectEOM(t,x,win_vel,const)
 %         x = 6x1 vector give position and velocity values in NED frame
 %           = [p_n p_e p_d v_n v_e v_d]
 %         win_vel = 3x1 wind velocity vector in NED frame
-%                 = [v_nv_e;v_d]
-% Outputs: 
+%                 = [v_n;v_e;v_d]
+%         const = structure containing air density, area, coefficient of
+%         drag, mass, and acceleration due to gravity
+% Outputs: xdot = time derivative of state vector x
 %
-% Methodology: 
+% Methodology: Uses Newton's second law F=ma to calculate the derivative of
+% the state vector. Taking into account the wind veolcity vector, the drag
+% force, and vector directions.
 
 % Declaring variables from the statevector x
 p_n = x(1); % Position of the sphere in the north direction
