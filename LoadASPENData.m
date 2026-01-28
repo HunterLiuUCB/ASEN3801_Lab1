@@ -6,7 +6,7 @@
 function [t_vec, av_pos_inert, av_att, tar_pos_inert, tar_att,pos_av_aspen] = LoadASPENData(filename)
 % Inputs: filename of a .csv file with data from the motion capture system in the ASPEN lab
 %
-% Outputs: t_vec = a 1xn time vector (s), n = total number of frames from the dataset (3)
+% Outputs: t_vec = a 1xn time vector (s), n = total number of frames from the dataset
 %          av_pos_inert = 3xn matrix of position vectors for the vehicle in Frame E
 %          av_att = 3xn matrix of attitude vectors listing the 3-2-1 Euler angles in radians for the vehicle relative to Frame E
 %          tar_pos_inert = 3xn matrix of position vectors for the target in Frame E
