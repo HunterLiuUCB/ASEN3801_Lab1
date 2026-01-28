@@ -1,9 +1,19 @@
 function DCM = RotationMatrix321(attitude321)
-% Inputs: 
+% Inputs:
+%   attitude321 – 3×1 vector of 3-2-1 Euler angles [alpha; beta; gamma],
+%                 corresponding to roll, pitch, and yaw, respectively
 %
-% Outputs: 
+% Outputs:
+%   DCM – Direction Cosine Matrix representing the transformation from the
+%         inertial North-East-Down (NED) frame to the body frame
 %
-% Methodology: 
+% Methodology:
+%   The Direction Cosine Matrix is constructed using a 3-2-1 Euler rotation
+%   sequence. Individual rotation matrices are formed for rotations about
+%   the body x-axis (roll), y-axis (pitch), and z-axis (yaw). These matrices
+%   are then multiplied together in reverse order of the rotation sequence
+%   to obtain the overall transformation matrix from the inertial frame to
+%   the body frame. 
 alpha = attitude321(1);
 beta = attitude321(2);
 gamma = attitude321(3);
