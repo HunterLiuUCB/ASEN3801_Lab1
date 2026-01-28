@@ -13,9 +13,7 @@ function DCM = RotationMatrix313(attitude313)
 %   sequence. Individual rotation matrices are defined for rotations about
 %   the z-axis, x-axis, and z-axis. These matrices are multiplied in reverse
 %   order of the Euler rotation sequence to form the overall passive
-%   transformation matrix from the inertial frame to the body frame. This
-%   formulation assumes a right-handed coordinate system and standard
-%   aerospace sign conventions.
+%   transformation matrix from the inertial frame to the body frame. 
 
 alpha = attitude313(1);
 beta  = attitude313(2);
