@@ -1,3 +1,7 @@
+%Contributors: Hunter Liu, Parker Himes, Jessa Wanninger, Andrew Yates
+%Course number: ASEN 3801
+%File name: EulerAngles313.m
+%Created: 1/20/26
 function attitude313 = EulerAngles313(DCM)
 % Inputs:
 %   DCM - Direction Cosine Matrix representing the transformation from the

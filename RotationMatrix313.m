@@ -1,3 +1,7 @@
+%Contributors: Hunter Liu, Parker Himes, Jessa Wanninger, Andrew Yates
+%Course number: ASEN 3801
+%File name: RotationMatrix313.m
+%Created: 1/20/26
 function DCM = RotationMatrix313(attitude313)
 % Inputs:
 %   attitude313 – 3×1 vector of 3-1-3 Euler angles [alpha; beta; gamma],

@@ -1,3 +1,7 @@
+%Contributors: Hunter Liu, Parker Himes, Jessa Wanninger, Andrew Yates
+%Course number: ASEN 3801
+%File name: problem_5.m
+%Created: 1/27/26
 function [tar_attitude_313, av_attitude_313] = problem_5(CSV_filename)
 % Inputs:
 %   CSV_filename – string name of the ASPEN motion-capture .csv file
