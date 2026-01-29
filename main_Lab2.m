@@ -20,8 +20,8 @@ filename = '3801_Sec001_Test1.csv';
 
 %% Problem 3
 data = DataConditioning(filename); % reading in and conditioning data file
-pos_av_aspen = data(:, 11:13)'; % extracting vehicle position vectors
-pos_tar_aspen = data(:,5:7)';
+pos_av_aspen = data(:, 11:13)' /1000; % extracting vehicle position vectors
+pos_tar_aspen = data(:,5:7)' /1000;
 figure(1)
 %Plots each axis of the inertial position of the aerospace vehicle
 plot3(pos_av_aspen(1,:), pos_av_aspen(2,:), pos_av_aspen(3,:), 'b');
